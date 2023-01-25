@@ -1,0 +1,24 @@
+body {
+
+    height: 100vh;
+    background-image: url("../Resources/background-img.jpg");
+    background-repeat: no-repeat;
+    background-size: 110%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 100%;
+}
+
+.page-title {
+
+    margin-right: 100px;
+    margin-top: 100px;
+    text-align: right;
+}
+
+
+main {
+    margin-top: 200px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

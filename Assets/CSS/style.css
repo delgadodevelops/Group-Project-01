@@ -4,21 +4,127 @@ body {
     background-image: url("../Resources/background-img.jpg");
     background-repeat: no-repeat;
     background-size: 110%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Rubik Bubbles';
     font-size: 100%;
 }
 
 .page-title {
 
-    margin-right: 100px;
-    margin-top: 100px;
+    margin-right: 40px;
+    margin-top: 15px;
     text-align: right;
 }
 
+p {
+    font-family: 'Rubik Bubbles';
+}
 
 main {
     margin-top: 200px;
     align-items: center;
-    justify-content: center;
     display: flex;
+    flex-direction: column;
+    margin-left: 300px;
+    max-width: 70vw;
+}
+
+input[type=search] {
+    border: 0px solid black;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0);
+    outline: none !important;
+    margin-left: 100px;
+    font-size: large;
+    font-family: 'Rubik Bubbles'
+}
+
+input[type=search]::placeholder {
+    color: black;
+}
+
+select {
+    border: 0px solid black;
+    width: 40px;
+    height: 25px;
+    background-color: rgba(75, 75, 75, 0.3);
+    outline: none !important;
+    border-radius: 5px;
+}
+
+.inputs {
+    margin-left: 250px;
+}
+
+.inputs * {
+    margin: 10px;
+    border: 1px solid #f6c220;
+}
+
+.input_date {
+    border: 1px solid #f6c220;
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 16px;
+}
+
+.input_date:focus {
+    border: 0px solid black;
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0);
+    outline: none !important;
+}
+
+.destination {
+    width: 250px;
+    text-decoration: none;
+
+}
+
+.logo {
+
+    width: 250px;
+    height: 54px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.search-button {
+    background-color: #f6c220;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 130px;
+    cursor: pointer;
+}
+
+.results {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    width: 50px;
+    height: 220px;
+    background-color: rgba(75, 75, 75, 0.8);
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.airbnb {
+    width: 50%;
+}
+
+.hotel {
+    width: 50%;
+}
+
+h2 {
+    font-family: 'Rubik Bubbles', cursive;
+    display: flex;
+    margin-left: 20px;
 }

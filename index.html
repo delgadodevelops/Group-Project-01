@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simply Stay: Vacation Made Easy!</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="./Assets/CSS/style.css">
+
 </head>
 
 <body>
@@ -16,42 +16,58 @@
 
     <img class="logo" src="./Assets/Resources/simply-stay-logo.png" alt="simply stay logo">
     <div class="page-title">
-      <p>website description</p>
+      <p>This website is the perfect source of inspiration for people who are looking to </p>
+      <p> build a vacation that meets their needs </p>
     </div>
 
   </header>
 
   <main>
-    <input type="search" id="location" placeholder="Type your destination here...">
-    <input type="date" id="check_in">
-    <input type="date" id="check_out">
-    <label for="num_of_adults">Adults</label>
-    <select name="num_of_adults" id="num_of_adults">
-      <option selected value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-    </select>
-    <label for="num_of_children">Children</label>
-    <select name="num_of_children" id="num_of_children">
-      <option selected value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-    </select>
+    <div class="destination">
+      <input type="search" id="location" placeholder="Type your destination here...">
+    </div>
+    <div class="inputs">
+      <input type="date" id="check_in" class="input_date">
+      <input type="date" id="check_out" class="input_date">
+      <label for="num_of_adults">Adults</label>
+      <select name="num_of_adults" id="num_of_adults">
+        <option selected value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+      <label for="num_of_children">Children</label>
+      <select name="num_of_children" id="num_of_children">
+        <option selected value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
 
-    <button> Search</button>
+    </div>
+
+    <button class="search-button">Search</button>
     <div id="airbnb_price"></div>
     <div id="hotel_price"></div>
+
+    <div class="results">
+      <div class="airbnb card">
+        <h2>AIRBNB</h2>
+        <div class="airbnb_results"></div>
+      </div>
+      <div class="hotel card">
+        <h2>HOTELS</h2>
+        <div class="hotel_results"></div>
+      </div>
+
   </main>
 
   <footer></footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./Assets/JS/script.js"></script>
 </body>
 

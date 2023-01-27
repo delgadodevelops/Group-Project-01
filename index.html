@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simply Stay: Vacation Made Easy!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="./Assets/CSS/style.css">
 
 </head>
@@ -23,9 +24,11 @@
   </header>
 
   <main>
-    <div class="destination">
-      <input type="search" id="location" placeholder="Type your destination here...">
-    </div>
+    <form>
+        <input class="destination-field" type="search" placeholder="Enter Destination Here..." aria-label="Search">
+          
+        <button class="btn waves-effect waves-light" type="submit" name="action">Search</button>
+    </form>
     <div class="inputs">
       <input type="date" id="check_in" class="input_date">
       <input type="date" id="check_out" class="input_date">
@@ -51,7 +54,7 @@
 
     </div>
 
-    <button class="search-button">Search</button>
+    <!-- <button class="search-button">Search</button> -->
     <div id="airbnb_price"></div>
     <div id="hotel_price"></div>
 
@@ -68,6 +71,7 @@
   </main>
 
   <footer></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./Assets/JS/script.js"></script>
 </body>
 

@@ -53,20 +53,46 @@ submitButton.on('click', function (e) {
     const queryLocationString = queryStringConverter(guestLocationEl);
 
     // airbnb fetch
-   fetch('https://airbnb13.p.rapidapi.com/search-location?location=' + guestLocationQueryString + '&checkin=2023-02-03&checkout=2023-02-04&adults=1&children=0&infants=0&page=1&bedrooms=2', airbnb_options)
-        .then(response => response.json())
-        .then(airbnb_data => {
+    /*fetch('https://airbnb13.p.rapidapi.com/search-location?location=' + guestLocationQueryString + '&checkin=2023-02-03&checkout=2023-02-04&adults=1&children=0&infants=0&page=1&bedrooms=2', airbnb_options)
+    .then(response => response.json())
+    .then(airbnb_data => {
             console.log(airbnb_data)
-            for (let i=1; i < 6; i++) {
+            for (let i = 1; i < 6; i++) {
                 const thumbNail = document.createElement('img')
-                thumbNail.setAttribute('src',airbnb_data.results[i].images[0])
+                thumbNail.setAttribute('src', airbnb_data.results[i].images[0])
                 $(`#bnb-${i}`).append(thumbNail)
             }
+    }
+    )
+    .catch(err => console.error(err));*/
+
+    fetch('https://apidojo-booking-v1.p.rapidapi.com/locations/auto-complete?text=' + queryLocationString + '&languagecode=en-us', getDestinationIdOptions)
+    .then(response => response.json())
+    .then(data => {
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].dest_type === "city" && data[i].city_name === guestLocationEl.val()) {
+                const dest_id = data[i].dest_id;
+                fetch('https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date=2023-02-03&departure_date=2023-02-04&guest_qty=1&dest_ids=' + dest_id + '&room_qty=1&search_type=city&children_qty=0&children_age=5%2C7&search_id=none&price_filter_currencycode=USD&order_by=price&languagecode=en-us&travel_purpose=leisure', getHotelIdOptions)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data)
+                        for (let i = 1; i < 6; i++) {
+                            const thumbNail = document.createElement('img')
+                            thumbNail.setAttribute('src', data.result[i].main_photo_url)
+                            $(`#hotel-${i}`).append(thumbNail)
+                            console.log(thumbNail)
+                        }
+                    })
+                    .catch(err => console.error(err));
+
+            }
+
         }
-        )
-        .catch(err => console.error(err));
-
-
-        // hotels fetch
-
     })
+    .catch(err => console.error(err));
+
+
+
+    // hotels fetch
+
+})

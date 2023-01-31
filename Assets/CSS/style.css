@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Oxygen:wght@400;700&display=swap');
+
+* {
+
+    font-family: "kanit", "sans-serif";
+    font-style: italic;
+}
+
 body {
 
     height: 100vh;
@@ -11,17 +19,23 @@ body {
 .page-title {
 
     margin-right: 40px;
-    margin-top: 15px;
-    text-align: right;
+    text-align: center;
+
 }
 
 form {
     display: flex;
+    align-items: center;
 
 }
 
-p {
-    font-family: 'Rubik Bubbles';
+.page-title p {
+    font-weight: 700;
+    font-size: 50px;
+    color: #f6c220;
+    margin-top: 15px;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.34);
+
 }
 
 main {
@@ -29,8 +43,9 @@ main {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-left: 300px;
     max-width: 70vw;
+    margin-left: 215px;
+
 }
 
 /* input[type=search] {
@@ -141,6 +156,7 @@ input[type=date]#check_out {
     width: 100%;
     display: flex;
     flex-direction: row;
+
 }
 
 .card {
@@ -160,7 +176,9 @@ input[type=date]#check_out {
 }
 
 h2 {
-    font-family: 'Rubik Bubbles', cursive;
+
     display: flex;
     margin-left: 20px;
+    font-size: 30px;
+    color: #f6c220;
 }

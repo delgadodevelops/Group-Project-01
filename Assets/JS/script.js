@@ -33,3 +33,13 @@ const getHotelIdOptions = {
         'X-RapidAPI-Host': 'apidojo-booking-v1.p.rapidapi.com'
     }
 };
+const queryStringConverter = function (guestInput) {
+    guestInput = guestInput.val();
+    guestInput = String(guestInput);
+    const inputArray = guestInput.split(" ");
+    queryString = inputArray[0];
+    for (let i = 1; i < inputArray.length; i++) {
+        queryString = queryString.concat("%20", inputArray[i])
+    }
+    return queryString
+}

@@ -11,7 +11,8 @@ body {
     height: 100vh;
     background-image: url("../Resources/background-img.jpg");
     background-repeat: no-repeat;
-    background-size: 110%;
+    background-size: 120%;
+    
     font-family: 'Rubik Bubbles';
     font-size: 100%;
 }

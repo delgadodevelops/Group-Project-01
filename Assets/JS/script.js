@@ -1,6 +1,6 @@
 var submitButton = $('#submitBtn');
-var guestCheckInEl = $('input[name="check_in"]');
-var guestCheckOutEl = $('input[name="check_out"]');
+var guestCheckInEl = $('#check_in');
+var guestCheckOutEl = $('#check_out');
 var guestLocationEl = $('input[name="location"]');
 var numberOfAdultsEl = $('#num_of_adults');
 var numberOfChildrenEl = $('#num_of_children');
@@ -43,6 +43,11 @@ const queryStringConverter = function (guestInput) {
     }
     return queryString
 }
+$(document).ready(function () {
+    $('select').formSelect();
+});
+
+
 submitButton.on('click', function (e) {
     e.preventDefault();
     const guestLocationQueryString = queryStringConverter(guestLocationEl);
@@ -67,13 +72,15 @@ submitButton.on('click', function (e) {
     )
     .catch(err => console.error(err));*/
 
+        // hotels fetch
+
     fetch('https://apidojo-booking-v1.p.rapidapi.com/locations/auto-complete?text=' + queryLocationString + '&languagecode=en-us', getDestinationIdOptions)
     .then(response => response.json())
     .then(data => {
         for (let i = 0; i < data.length; i++) {
             if (data[i].dest_type === "city" && data[i].city_name === guestLocationEl.val()) {
                 const dest_id = data[i].dest_id;
-                fetch('https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date=2023-02-03&departure_date=2023-02-04&guest_qty=1&dest_ids=' + dest_id + '&room_qty=1&search_type=city&children_qty=0&children_age=5%2C7&search_id=none&price_filter_currencycode=USD&order_by=popularity&languagecode=en-us&travel_purpose=leisure', getHotelIdOptions)
+                fetch('https://apidojo-booking-v1.p.rapidapi.com/properties/list?offset=0&arrival_date='+guestCheckInQueryString+'&departure_date='+guestCheckOutQueryString+'&guest_qty='+numberOfAdultsQueryString+'&dest_ids=' + dest_id + '&room_qty=1&search_type=city&children_qty='+numberOfChildrenQueryString+'&children_age=5%2C7&search_id=none&price_filter_currencycode=USD&order_by=popularity&languagecode=en-us&travel_purpose=leisure', getHotelIdOptions)
                     .then(response => response.json())
                     .then(data => {
                         console.log(data)
@@ -93,9 +100,5 @@ submitButton.on('click', function (e) {
         }
     })
     .catch(err => console.error(err));
-
-
-
-    // hotels fetch
 
 })

@@ -24,9 +24,9 @@
 
   <main>
     <form>
-      <input class="destination-field" type="search" placeholder="Enter Destination Here..." aria-label="Search">
+      <input class="destination-field" type="search" placeholder="Enter Destination Here..." name="location" aria-label="Search">
 
-      <button class="btn waves-effect waves-light" type="submit" name="action">Search</button>
+      <button class="btn waves-effect waves-light" type="submit" id="submitBtn" name="action">Search</button>
     </form>
     <div class="inputs">
       <input type="date" id="check_in" class="input_date">
@@ -55,8 +55,8 @@
         <li><a href="#!" value="3">three</a></li>
         <li><a href="#!" value="4">four</a></li>
         <li><a href="#!" value="5">five</a></li>
-      </ul>      
-      
+      </ul>
+
 
 
     </div>
@@ -68,17 +68,29 @@
     <div class="results">
       <div class="airbnb card">
         <h2>AIRBNB</h2>
-        <div class="airbnb_results"></div>
+        <div class="airbnb_results">
+          <div id="bnb-1"></div>
+          <div id="bnb-2"></div>
+          <div id="bnb-3"></div>
+          <div id="bnb-4"></div>
+          <div id="bnb-5"></div>
+        </div>
       </div>
       <div class="hotel card">
         <h2>HOTELS</h2>
-        <div class="hotel_results"></div>
+        <div class="hotel_results">
+          <div id="hotel-1"></div>
+          <div id="hotel-2"></div>
+          <div id="hotel-3"></div>
+          <div id="hotel-4"></div>
+          <div id="hotel-5"></div>
+        </div>
       </div>
-
   </main>
 
   <footer></footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="./Assets/JS/script.js"></script>
 </body>
 

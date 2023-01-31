@@ -182,3 +182,7 @@ h2 {
     font-size: 30px;
     color: #f6c220;
 }
+img {
+    width: 100px;
+    height: auto;
+}

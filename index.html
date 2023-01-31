@@ -24,39 +24,36 @@
 
   <main>
     <form>
-      <input class="destination-field" type="search" placeholder="Enter Destination Here..." name="location" aria-label="Search">
+      <input class="destination-field" type="search" placeholder="Enter Destination Here..." name="location"aria-label="Search">
 
       <button class="btn waves-effect waves-light" type="submit" id="submitBtn" name="action">Search</button>
     </form>
     <div class="inputs">
       <input type="date" id="check_in" class="input_date">
       <input type="date" id="check_out" class="input_date">
-
-      <!-- Dropdown Trigger (ADULTS) -->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Adults</a>
-
-      <!-- Dropdown Structure (ADULTS) -->
-      <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="#!" value="1">one</a></li>
-        <li><a href="#!" value="2">two</a></li>
-        <li><a href="#!" value="3">three</a></li>
-        <li><a href="#!" value="4">four</a></li>
-        <li><a href="#!" value="5">five</a></li>
-      </ul>
-
-      <!-- Dropdown Trigger (CHILDREN) -->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown2'>Children</a>
-
-      <!-- Dropdown Structure (CHILDREN) -->
-      <ul id='dropdown2' class='dropdown-content'>
-        <li><a href="#!" value="0">none</a></li>
-        <li><a href="#!" value="1">one</a></li>
-        <li><a href="#!" value="2">two</a></li>
-        <li><a href="#!" value="3">three</a></li>
-        <li><a href="#!" value="4">four</a></li>
-        <li><a href="#!" value="5">five</a></li>
-      </ul>
-
+      <div class="input-field">
+        <select id="num_of_adults">
+          <option value="" disabled selected></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <label>Adults</label>
+      </div>
+      <div class="input-field">
+        <select id="num_of_children">
+          <option value="" disabled selected></option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <label>Children</label>
+      </div>
 
 
     </div>
@@ -89,9 +86,10 @@
   </main>
 
   <footer></footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="./Assets/JS/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 
 </html>

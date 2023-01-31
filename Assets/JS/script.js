@@ -80,6 +80,7 @@ submitButton.on('click', function (e) {
                             const thumbNail = document.createElement('img')
                             thumbNail.setAttribute('src', data.result[i].main_photo_url)
                             $(`#hotel-${i}`).append(thumbNail)
+                            $(`#hotel-${i}`).wrap(`<a href= ${data.result[i].url}></a>`)
                             console.log(thumbNail)
                         }
                     })

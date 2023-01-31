@@ -43,3 +43,30 @@ const queryStringConverter = function (guestInput) {
     }
     return queryString
 }
+submitButton.on('click', function (e) {
+    e.preventDefault();
+    const guestLocationQueryString = queryStringConverter(guestLocationEl);
+    const guestCheckInQueryString = queryStringConverter(guestCheckInEl);
+    const guestCheckOutQueryString = queryStringConverter(guestCheckOutEl);
+    const numberOfAdultsQueryString = queryStringConverter(numberOfAdultsEl);
+    const numberOfChildrenQueryString = queryStringConverter(numberOfChildrenEl);
+    const queryLocationString = queryStringConverter(guestLocationEl);
+
+    // airbnb fetch
+   fetch('https://airbnb13.p.rapidapi.com/search-location?location=' + guestLocationQueryString + '&checkin=2023-02-03&checkout=2023-02-04&adults=1&children=0&infants=0&page=1&bedrooms=2', airbnb_options)
+        .then(response => response.json())
+        .then(airbnb_data => {
+            console.log(airbnb_data)
+            for (let i=1; i < 6; i++) {
+                const thumbNail = document.createElement('img')
+                thumbNail.setAttribute('src',airbnb_data.results[i].images[0])
+                $(`#bnb-${i}`).append(thumbNail)
+            }
+        }
+        )
+        .catch(err => console.error(err));
+
+
+        // hotels fetch
+
+    })

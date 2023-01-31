@@ -39,7 +39,7 @@ form {
 }
 
 main {
-    margin-top: 200px;
+    /* margin-top: 200px; */
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -160,20 +160,20 @@ input[type=date]#check_out {
 }
 
 .card {
-    width: 50px;
-    height: 220px;
+    width: 1500px;
+    height: 550px;
     background-color: rgba(75, 75, 75, 0.8);
     border-radius: 5px;
     margin: 10px;
 }
 
-.airbnb {
+/* .airbnb {
     width: 50%;
 }
 
 .hotel {
     width: 50%;
-}
+} */
 
 h2 {
 
@@ -181,4 +181,5 @@ h2 {
     margin-left: 20px;
     font-size: 30px;
     color: #f6c220;
+
 }

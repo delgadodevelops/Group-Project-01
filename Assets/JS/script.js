@@ -58,19 +58,19 @@ submitButton.on('click', function (e) {
     const queryLocationString = queryStringConverter(guestLocationEl);
 
     // airbnb fetch
-    fetch('https://airbnb13.p.rapidapi.com/search-location?location=' + guestLocationQueryString + '&checkin=2023-02-03&checkout=2023-02-04&adults=1&children=0&infants=0&page=1&bedrooms=2', airbnb_options)
-    .then(response => response.json())
-    .then(airbnb_data => {
-            console.log(airbnb_data)
-            for (let i = 1; i < 6; i++) {
-                const thumbNail = document.createElement('img')
-                thumbNail.setAttribute('src', airbnb_data.results[i].images[0])
-                $(`#bnb-${i}`).append(thumbNail)
-                $(`#bnb-${i}`).wrap(`<a href= ${airbnb_data.result[i].url}></a>`)
-            }
-    }
-    )
-    .catch(err => console.error(err));
+    // fetch('https://airbnb13.p.rapidapi.com/search-location?location=' + guestLocationQueryString + '&checkin=2023-02-03&checkout=2023-02-04&adults=1&children=0&infants=0&page=1&bedrooms=2', airbnb_options)
+    // .then(response => response.json())
+    // .then(airbnb_data => {
+    //         console.log(airbnb_data)
+    //         for (let i = 1; i < 6; i++) {
+    //             const thumbNail = document.createElement('img')
+    //             thumbNail.setAttribute('src', airbnb_data.results[i].images[0])
+    //             $(`#bnb-${i}`).append(thumbNail)
+    //             $(`#bnb-${i}`).wrap(`<a href= ${airbnb_data.result[i].url}></a>`)
+    //         }
+    // }
+    // )
+    // .catch(err => console.error(err));
 
         // hotels fetch
 
@@ -87,9 +87,12 @@ submitButton.on('click', function (e) {
                         for (let i = 1; i < 6; i++) {
                             const thumbNail = document.createElement('img')
                             thumbNail.setAttribute('src', data.result[i].main_photo_url)
-                            $(`#hotel-${i}`).append(thumbNail)
+                            thumbNail.setAttribute('width', '75px')
+                            thumbNail.setAttribute('height','75px')
+                            $(`#hotel-img-${i}`).append(thumbNail)
                             $(`#hotel-${i}`).wrap(`<a href= ${data.result[i].url}></a>`)
-                            $(`#hotel-${i}`).append($(`<div>${data.result[i].price_breakdown.all_inclusive_price} USD</div>`))
+                            $(`#title-${i}`).append(data.result[i].hotel_name)
+                            $(`#price-${i}`).append(`\$${data.result[i].price_breakdown.all_inclusive_price} per night`)
                             console.log(thumbNail)
                         }
                     })

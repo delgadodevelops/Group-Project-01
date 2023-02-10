@@ -36,6 +36,7 @@ form {
     color: #f6c220;
     margin-top: 15px;
     text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.34);
+    align-items: center;
 
 }
 
@@ -183,4 +184,29 @@ h2 {
     font-size: 30px;
     color: #f6c220;
 
+}
+.title_price.hotel-img {
+    height: 75px;
+    width: auto;
+    margin-right: 15px;
+    display: inline;
+    float:left;
+}
+.price_container {
+    margin-right: 15px;
+    margin-left: auto;
+}
+.title_container {
+    width: 40%;
+    margin-left: 10px;
+}
+.title_price {
+    display: flex;
+    margin-left: 15px;
+}
+.row {
+    margin-bottom: 10px;
+}
+a:link {
+  color: white;
 }

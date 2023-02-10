@@ -58,7 +58,7 @@ submitButton.on('click', function (e) {
     const queryLocationString = queryStringConverter(guestLocationEl);
 
     // airbnb fetch
-    /*fetch('https://airbnb13.p.rapidapi.com/search-location?location=' + guestLocationQueryString + '&checkin=2023-02-03&checkout=2023-02-04&adults=1&children=0&infants=0&page=1&bedrooms=2', airbnb_options)
+    fetch('https://airbnb13.p.rapidapi.com/search-location?location=' + guestLocationQueryString + '&checkin=2023-02-03&checkout=2023-02-04&adults=1&children=0&infants=0&page=1&bedrooms=2', airbnb_options)
     .then(response => response.json())
     .then(airbnb_data => {
             console.log(airbnb_data)
@@ -70,7 +70,7 @@ submitButton.on('click', function (e) {
             }
     }
     )
-    .catch(err => console.error(err));*/
+    .catch(err => console.error(err));
 
         // hotels fetch
 
